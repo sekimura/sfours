@@ -35,6 +35,8 @@ func ScrapeFromResponse(res *http.Response) (events []Event, err error) {
 		aTags.Each(func(i int, s *goquery.Selection) {
 			if s.Text() == "Full" {
 				href, _ = s.Attr("href")
+			} else if s.Text() == "Register" {
+				href, _ = s.Attr("href")
 			}
 		})
 		if href == "" {
